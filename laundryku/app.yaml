@@ -1,0 +1,5 @@
+runtime: php82
+
+# Environment variables for GCP App Engine standard environment
+env_variables:
+  FIREBASE_DB_URL: 'https://laundryku-c391f-default-rtdb.firebaseio.com/'

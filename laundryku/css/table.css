@@ -1,0 +1,190 @@
+/* ======================================================
+   TABLE.CSS — Data Table, Status Badges, Action Cells
+   ====================================================== */
+.table-card {
+    overflow: hidden;
+    margin-bottom: 2rem;
+}
+
+.table-wrapper {
+    overflow-x: auto;
+    width: 100%;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+    font-size: 0.925rem;
+}
+
+th {
+    padding: 1.2rem 1.5rem;
+    font-weight: 700;
+    color: var(--text-muted);
+    border-bottom: 1px solid var(--card-border);
+    background: rgba(0, 0, 0, 0.15);
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    letter-spacing: 0.5px;
+}
+
+td {
+    padding: 1.2rem 1.5rem;
+    border-bottom: 1px solid var(--card-border);
+    color: var(--text-main);
+    vertical-align: middle;
+}
+
+tr:last-child td {
+    border-bottom: none;
+}
+
+tr {
+    transition: var(--transition-smooth);
+}
+
+tr:hover td {
+    background: rgba(255, 255, 255, 0.015);
+}
+
+/* Customer details styling inside table */
+.customer-cell {
+    display: flex;
+    flex-direction: column;
+}
+
+.customer-name {
+    font-weight: 600;
+    color: #fff;
+}
+
+.customer-sub {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    margin-top: 2px;
+}
+
+/* Service Type cell */
+.service-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-weight: 600;
+}
+
+/* Status Badges */
+.status-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 0.35rem 0.75rem;
+    border-radius: 9999px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.25px;
+    text-transform: uppercase;
+}
+
+.status-badge::before {
+    content: '';
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: currentColor;
+}
+
+.status-badge.proses {
+    color: var(--status-proses);
+    background: var(--status-proses-bg);
+}
+
+.status-badge.selesai {
+    color: var(--status-selesai);
+    background: var(--status-selesai-bg);
+}
+
+.status-badge.diambil {
+    color: var(--status-diambil);
+    background: var(--status-diambil-bg);
+}
+
+/* Action Dropdown/Buttons styling */
+.action-cell {
+    display: flex;
+    gap: 8px;
+}
+
+/* Select element styled for table status change */
+.status-select-wrapper {
+    position: relative;
+    display: inline-block;
+}
+
+.status-select {
+    appearance: none;
+    -webkit-appearance: none;
+    background: rgba(15, 23, 42, 0.95);
+    border: 1px solid rgba(148, 163, 184, 0.3);
+    padding: 0.4rem 1.8rem 0.4rem 0.8rem;
+    border-radius: 8px;
+    color: #94a3b8;
+    font-size: 0.8rem;
+    font-weight: 600;
+    cursor: pointer;
+    outline: none;
+    transition: var(--transition-smooth);
+}
+
+.status-select option {
+    color: #f8fafc;
+    background: rgba(15, 23, 42, 0.95);
+}
+
+.status-select:focus {
+    border-color: var(--accent-blue);
+}
+
+.status-select-wrapper::after {
+    content: '\f078';
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+    font-size: 0.65rem;
+    color: var(--text-muted);
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+}
+
+/* Loading State */
+.table-loading {
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    color: var(--text-muted);
+}
+
+/* Empty State */
+.empty-state {
+    padding: 4rem 2rem;
+    text-align: center;
+    color: var(--text-muted);
+}
+
+.empty-state i {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    background: linear-gradient(135deg, var(--primary), var(--accent-blue));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    opacity: 0.8;
+}
+
+.empty-state p {
+    font-size: 0.95rem;
+}
